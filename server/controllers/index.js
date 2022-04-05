@@ -1,4 +1,4 @@
-const Data = require('../models/data')
+// const Data = require('../models/data')
 const { Cities, Attractions } = require ('../models')
 
 
