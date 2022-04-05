@@ -1,2 +1,2 @@
-# Travel_Park_Blog
+# Travel_Page_Blog
 Room 12 Project
