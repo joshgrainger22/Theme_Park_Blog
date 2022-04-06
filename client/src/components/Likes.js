@@ -1,25 +1,14 @@
-// import cn from 'classnames'
-// import { ReactComponent as Hand } from './hand.svg'
+import { useState } from 'react'
 
-// import './styles.scss'
+const LikeButton = () => {
+  const [likes, setLikes] = useState(0)
 
-// const LikeButton = () => {
-//   const [liked, setLiked] = useState(null)
+  const addLike = () => {
+    let newCount = likes + 1
+    setLikes(newCount)
+  }
 
-//   return (
-//     <button
-//       onClick={() => setLiked(!liked)}
-//       onAnimationEnd={() => setClicked(false)}
-//       className={cn('like-button-wrapper', {
-//         liked
-//       })}
-//     >
-//       <div className="like-button">
-//         <Hand />
-//         <span>Like</span>
-//       </div>
-//     </button>
-//   )
-// }
+  return <button onClick={addLike}>Likes {likes}</button>
+}
 
-// export default LikeButton
+export default LikeButton
