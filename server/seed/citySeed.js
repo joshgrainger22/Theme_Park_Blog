@@ -7,20 +7,20 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
     const citiesSeed = [
         {
-            name: 'Statue Of Liberty',
-            location: 'New York City',
-            image: 'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1MTc1MTk3ODI0MDAxNjA5/topic-statue-of-liberty-gettyimages-960610006-promo.jpg'
+            name: 'New York City',
+            location: 'New York',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_720,q_75,w_1400/v1/clients/newyorkcity/Coronavirus_Info_midtown_manhattan_skyline_nyc_3000x2000_364fa9b8-86ce-4f95-907a-4bd8ea32f232.jpg'
         },
         {
-            name: 'Hollywood Sign',
-            location: 'Los Angeles, CA',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hollywood_Sign_%28Zuschnitt%29.jpg/1200px-Hollywood_Sign_%28Zuschnitt%29.jpg'
+            name: 'Los Angeles',
+            location: 'Southern California',
+            image: 'https://media.california.com/media/_versions/articles/optimized-shutterstock_520789897__1200x787___v1222x580.jpg'
         },
         {
-            name: 'Golden Gate Bridge',
-            location: 'San Francisco, CA',
-            image: 'https://www.fodors.com/wp-content/uploads/2018/11/10-Golden-Gate-Bridge.jpg'
-        }
+            name: 'San Francisco',
+            location: 'North California',
+            image: 'https://lp-cms-production.imgix.net/2020-11/shutterstockRF_627905945.jpg?format=auto&crop=entropy&fit=crop&h=800&sharp=10&vib=20&w=1200'
+        },
     ]
 
     await Cities.insertMany(citiesSeed)
