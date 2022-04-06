@@ -24,7 +24,7 @@ const Attractions = (props) => {
     <div>
       <h3>Attractions</h3>
       <div>
-        {props.attractionState.attractions.attractions.map((attraction) => (
+        {props.attractionState.attractions.map((attraction) => (
           <ul key={attraction._id}>
             <h4>{attraction.name}</h4>
             <h5>{attraction.location}</h5>

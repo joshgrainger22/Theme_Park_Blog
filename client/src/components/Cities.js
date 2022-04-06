@@ -15,20 +15,22 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 function Cities(props) {
-  console.log(props)
+  //console.log(props)
   useEffect(() => {
     props.fetchCities()
   }, [])
 
+  //console.log(props.cityState)
+
   return (
     <div className="city-container">
-      {props.cityState.cities.cities.map((city) => (
+      {props.cityState.cities.map((city) => (
         <div key={city._id} className="city-itmes">
-          <Link to='/attractions'>
+          {/* <Link to='/attractions'> */}
           <img className="city-image" src={city.image} alt="city"></img>
           <h2>{city.cityName}</h2>
           <p>{city.description}</p>
-          </Link>
+          {/* </Link> */}
         </div>
       ))}
     </div>
