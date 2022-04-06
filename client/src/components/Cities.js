@@ -4,33 +4,31 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
-
 const mapStateToProps = ({ cityState }) => {
-  return  { cityState }
+  return { cityState }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      fetchCities: () => dispatch(LoadCities())
+    fetchCities: () => dispatch(LoadCities())
   }
 }
 
 function Cities(props) {
-
   console.log(props)
-  useEffect(()=> {
+  useEffect(() => {
     props.fetchCities()
-}, [])
+  }, [])
 
   return (
-    <div className='city-container'>
+    <div className="city-container">
       {props.cityState.cities.cities.map((city) => (
-        <div key={city._id} className='city-itmes'>
-            {/* <Link to={`/cities/${city.id}`} > */}
-              <img className='city-image' src={city.image} alt='city'></img>
-              <h3>{city.location}</h3>
-            {/* </Link> */}
-
+        <div key={city._id} className="city-itmes">
+          
+          <img className="city-image" src={city.image} alt="city"></img>
+          <h2>{city.cityName}</h2>
+          <p>{city.description}</p>
+          
         </div>
       ))}
     </div>

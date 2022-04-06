@@ -7,19 +7,19 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
     const citiesSeed = [
         {
-            name: 'Statue Of Liberty',
-            location: 'New York City',
-            image: 'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY1MTc1MTk3ODI0MDAxNjA5/topic-statue-of-liberty-gettyimages-960610006-promo.jpg'
+            cityName: "New York City",
+            description: "New York is a city of diversity and dynamism. It is also a city of politics, economy and culture. It is even described as the economic and cultural capital of the world, and New York City is one of the most populous cities in the United States.",
+            image: "http://res.cloudinary.com/simpleview/image/upload/v1622206643/clients/newyorkstate/2000_x_797_web_hero_skyline_2_6b921811-cd45-42fd-990a-ba60c7fba1f0.jpg"
         },
         {
-            name: 'Hollywood Sign',
-            location: 'Los Angeles, CA',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hollywood_Sign_%28Zuschnitt%29.jpg/1200px-Hollywood_Sign_%28Zuschnitt%29.jpg'
+            cityName: "Los Angeles, CA ",
+            description: "The city of Los Angeles [69] (also known simply as L.A., and nicknamed the 'City of Angels') is the most populous city in California",
+            image: "https://upload.wikimedia.org/wikipedia/commons/3/32/20190616154621%21Echo_Park_Lake_with_Downtown_Los_Angeles_Skyline.jpg"
         },
         {
-            name: 'Golden Gate Bridge',
-            location: 'San Francisco, CA',
-            image: 'https://www.fodors.com/wp-content/uploads/2018/11/10-Golden-Gate-Bridge.jpg'
+            cityName: "San Francisco, CA",
+            description: "San Francisco is a cultural and financial centre of the western United States and one of the country's most cosmopolitan cities",
+            image: "https://media.cntraveler.com/photos/5a99b5c520dfb6552425ecc8/2:1/w_2560%2Cc_limit/san-francisco_GettyImages-600366840.jpg"
         }
     ]
 
