@@ -6,9 +6,10 @@ export const LoadCities = () => {
   return async (dispatch) => {
     try {
       const cities = await GetCities()
+      //console.log(cities)
       dispatch({
         type: GET_CITIES,
-        payload: cities
+        payload: cities.cities
       })
     } catch (error) {
       throw error
@@ -22,7 +23,7 @@ export const LoadAttractions = () => {
       const attractions = await GetAttractions()
       dispatch({
         type: GET_CITIES_ATTRACTIONS,
-        payload: attractions
+        payload: attractions.attractions
       })
     } catch (error) {
       throw error
