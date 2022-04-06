@@ -3,13 +3,37 @@ import { connect } from 'react-redux'
 import { GetAttractions } from '../services/CitiesAttracService'
 import React from 'react'
 
-const mapStateToProps = ()
+const mapStateToProps = ({ attractionState }) => {
+  return { attractionState }
+}
 
-function Attractions() {
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAttractions: () => dispatch(GetAttractions())
+  }
+}
+
+const Attractions = (props) => {
+  useEffect(() => {
+    props.fetchAttractions()
+  }, [])
+
+  console.log('Attract State', props.attractionState)
+
   return (
-    <div>Attractions</div>
+    <div>
+      <h3>Attractions</h3>
+      <div>
+        {props.attractionState.map((attraction) => (
+          <ul key={attraction._id}>
+            <h4>{attraction.name}</h4>
+            <h5>{attraction.location}</h5>
+            <img src={attraction.image} alt="Attraction" />
+          </ul>
+        ))}
+      </div>
+    </div>
   )
 }
 
-export default Attractions
-
+export default connect(mapStateToProps, mapDispatchToProps)(Attractions)
