@@ -24,10 +24,11 @@ function Cities(props) {
     <div className="city-container">
       {props.cityState.cities.cities.map((city) => (
         <div key={city._id} className="city-itmes">
-          {/* <Link to={`/cities/${city.id}`}> */}
+          
           <img className="city-image" src={city.image} alt="city"></img>
-          <h3>{city.location}</h3>
-          {/* </Link> */}
+          <h2>{city.cityName}</h2>
+          <p>{city.description}</p>
+          
         </div>
       ))}
     </div>
