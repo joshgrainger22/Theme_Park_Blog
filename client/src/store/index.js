@@ -1,7 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { combineWithDevTools } from 'redux-devtools-extension'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
+import GetAttractionsReducer from './reducers/AttractionReducers'
 
-const store = createStore(() => ({}))
+const store = createStore(
+  combineReducers({
+    attractionState: GetAttractionsReducer
+  }),
+  composeWithDevTools(applyMiddleware(thunk))
+)
 
 export default store
