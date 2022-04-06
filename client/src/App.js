@@ -11,6 +11,7 @@ function App() {
         <Cities />
         <div>
           <Routes>
+            <Route path='/' element={<Cities/>} />
             <Route path='/cities/:id' element={<Attractions />} />
           </Routes>           
         </div>
