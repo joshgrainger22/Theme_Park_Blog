@@ -7,7 +7,7 @@ import CityReducer from './reducers/CityReducers'
 const store = createStore(
   combineReducers({
     attractionState: GetAttractionsReducer,
-    cityState: CityReducer,
+    cityState: CityReducer
   }),
   composeWithDevTools(applyMiddleware(thunk))
 )
