@@ -8,7 +8,6 @@ function App() {
     <div className="App">
       <header className="App-header">Header</header>
       <main>
-        <Cities />
         <div>
           <Routes>
             <Route path='/' element={<Cities/>} />
