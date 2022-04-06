@@ -1,3 +1,7 @@
+import { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { GetAttractions } from '../services/CitiesAttracService'
+
 import React from 'react'
 
 function Attractions() {
@@ -7,3 +11,4 @@ function Attractions() {
 }
 
 export default Attractions
+
