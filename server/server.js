@@ -15,12 +15,5 @@ app.use('/', routes)
    
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.use(logger('dev'))
-app.use(express.static(`${__dirname}/client/build`))
-
-app.use('/api', routes)
-
-db.on('error', console.error.bind(console, 'MongoDB connection error:'))
-
 
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
