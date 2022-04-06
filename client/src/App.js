@@ -10,9 +10,9 @@ function App() {
       <main>
         <div>
           <Routes>
-            <Route path='/' element={<Cities/>} />
-            <Route path='/cities/:id' element={<Attractions />} />
-          </Routes>           
+            <Route path="/" element={<Cities />} />
+            <Route path="/cities/:id" element={<Attractions />} />
+          </Routes>
         </div>
       </main>
     </div>
