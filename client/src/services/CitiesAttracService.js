@@ -9,11 +9,11 @@ export const GetCities = async () => {
   }
 }
 
-export const GetAttractions = async (id) => {
-  try {
-    const res = await Client.get(`/attractions`)
-    return res.data
-  } catch (error) {
-    throw error
-  }
-}
+// export const GetAttractions = async (id) => {
+//   try {
+//     const res = await Client.get(`/attractions`)
+//     return res.data
+//   } catch (error) {
+//     throw error
+//   }
+// }

@@ -6,5 +6,4 @@ router.get('/cities', controllers.getAllCities)
 
 router.get('/attractions', controllers.getAllAttractions)
 
-
-module.exports = router;
+module.exports = router
