@@ -1,5 +1,6 @@
 // const Data = require('../models/data')
-const { Cities, Attractions } = require ('../models')
+const { Cities, Attractions, Comment, Post } = require ('../models');
+
 
 
 const getAllCities = async (request, response) => {
@@ -9,6 +10,38 @@ const getAllCities = async (request, response) => {
     } catch (err) {
         return response.status(500).send(err.message)
     }
+    }
+
+const getAllPost = async (req, res) => {
+    try {
+        const posts = await Post.find()
+        return res.status(200).json({ posts })
+} catch (err) {
+    return res.status(500).send(err.message)
+}
+}
+
+    const createPost = async (req, res) => {
+        try {
+            const post = await new Post(req.body)
+            console.log(req.body)
+            await post.save()
+            return res.status(201).json({
+                post,
+            });
+        } catch (error) {
+            return res.status(500).json({ error: error.message })
+        }
+    }
+
+    const createComment = async (req, res) => {
+        try {
+            const comment = await new Comment(req.body)
+            console.log(req.body)
+            await comment.save()
+        } catch (error) {
+            return res.status(500).json({ error: error.message })
+        }
     }
 
     const getAllAttractions = async (request, response) => {
@@ -22,6 +55,9 @@ const getAllCities = async (request, response) => {
 
         module.exports = {
             getAllAttractions,
-            getAllCities
+            getAllCities,
+            createPost,
+            createComment,
+            getAllPost
         }
 
