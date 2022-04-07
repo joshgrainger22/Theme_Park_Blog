@@ -24,7 +24,11 @@ function CreatePost(props) {
     props.fetchPosts()
   }, [])
 
-  const navigate = useNavigate()
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
+  //const navigate = useNavigate()
   const [name, setName] = useState('')
   const [posts, setPosts] = useState('')
   const [create, setCreate] = useState(false)
@@ -33,7 +37,9 @@ function CreatePost(props) {
 
   function CreatePost(e) {
     e.preventDefault()
-    window.location.reload(true)
+    //console.log(name, posts)
+    //console.log(FormData)
+    //window.location.reload(true)
   }
 
   return (
@@ -46,7 +52,7 @@ function CreatePost(props) {
             <div>
               <input
                 type="text"
-                className="name-input"
+                name="name-input"
                 placeholder="Enter your name here"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -61,7 +67,7 @@ function CreatePost(props) {
                 onChange={(e) => setPosts(e.target.value)}
               />
             </div>
-            <button onClick={() => navigate(`/`)}>Submit</button>
+            <button>Submit</button>
           </form>
         ) : (
           <button
