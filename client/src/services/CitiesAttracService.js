@@ -17,3 +17,12 @@ export const GetAttractions = async (id) => {
     throw error
   }
 }
+
+// export const createComments = async (commentsData) => {
+//   try {
+//     const res = await Client.post('/attractions', commentsData)
+//     return res.data
+//   } catch (error) {
+//     throw error
+//   }
+// }
