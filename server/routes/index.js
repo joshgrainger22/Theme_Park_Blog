@@ -6,12 +6,12 @@ router.get('/cities', controllers.getAllCities)
 
 router.get('/attractions', controllers.getAllAttractions)
 
-
 router.get('/getAllPosts', controllers.getAllPost)
 
 router.post('/createPost', controllers.createPost)
 
 router.post('/addComment', controllers.createComment)
 
+router.get('/getAllComments', controllers.getAllComments)
 
-module.exports = router;
+module.exports = router

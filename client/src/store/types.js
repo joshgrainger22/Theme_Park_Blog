@@ -1,3 +1,6 @@
 export const GET_CITIES = 'GET_CITIES'
 export const GET_CITIES_ATTRACTIONS = 'GET_CITIES_ATTRACTIONS'
-
+export const GET_POSTS = 'GET_POSTS'
+export const GET_COMMENTS = 'GET_COMMENTS'
+export const GET_NEW_POSTS = 'GET_NEW_POSTS'
+export const GET_NEW_COMMENTS = 'GET_NEW_COMMENTS'

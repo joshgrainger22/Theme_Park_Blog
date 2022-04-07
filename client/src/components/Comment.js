@@ -33,7 +33,7 @@ const Comment = () => {
                 onChange={(e) => setPosts(e.target.value)}
               />
             </div>
-            <button onClick={() => navigate(`/`)}>Submit</button>
+            <button>Submit</button>
           </form>
         ) : (
           <button

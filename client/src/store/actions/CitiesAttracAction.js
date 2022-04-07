@@ -1,6 +1,17 @@
-import { GET_CITIES, GET_CITIES_ATTRACTIONS } from '../types'
-import { GetCities, GetAttractions, createComments } from '../../services/CitiesAttracService'
-
+import {
+  GET_CITIES,
+  GET_CITIES_ATTRACTIONS,
+  GET_POSTS,
+  GET_COMMENTS
+} from '../types'
+import {
+  GetCities,
+  GetAttractions,
+  GetAllPosts,
+  PostCreateComment,
+  PostCreatePost,
+  GetAllComments
+} from '../../services/CitiesAttracService'
 
 export const LoadCities = () => {
   return async (dispatch) => {
@@ -31,11 +42,30 @@ export const LoadAttractions = () => {
   }
 }
 
+export const LoadPosts = () => {
+  return async (dispatch) => {
+    try {
+      const posts = await GetAllPosts()
+      dispatch({
+        type: GET_POSTS,
+        payload: posts
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+}
 
-// export const CreateCommentsAction = (commentsData) => {
-//   return dispatch => {
-//       createComments().then((res) => {
-//         console.log(res.data);
-//       })
-//   }
-// }
+export const LoadComments = () => {
+  return async (dispatch) => {
+    try {
+      const comments = await GetAllComments()
+      dispatch({
+        type: GET_COMMENTS,
+        payload: comments
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+}
