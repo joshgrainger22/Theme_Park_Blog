@@ -9,6 +9,7 @@ export const GetCities = async () => {
   }
 }
 
+
 export const GetAttractions = async (id) => {
   try {
     const res = await Client.get(`/attractions`)
@@ -18,11 +19,3 @@ export const GetAttractions = async (id) => {
   }
 }
 
-// export const createComments = async (commentsData) => {
-//   try {
-//     const res = await Client.post('/attractions', commentsData)
-//     return res.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
