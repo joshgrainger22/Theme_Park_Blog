@@ -1,6 +1,6 @@
 import { GET_CITIES, GET_CITIES_ATTRACTIONS } from '../types'
-import { GetCities } from '../../services/CitiesAttracService'
-import { GetAttractions } from '../../services/CitiesAttracService'
+import { GetCities, GetAttractions, createComments } from '../../services/CitiesAttracService'
+
 
 export const LoadCities = () => {
   return async (dispatch) => {
@@ -30,3 +30,12 @@ export const LoadAttractions = () => {
     }
   }
 }
+
+
+// export const CreateCommentsAction = (commentsData) => {
+//   return dispatch => {
+//       createComments().then((res) => {
+//         console.log(res.data);
+//       })
+//   }
+// }

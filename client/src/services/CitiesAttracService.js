@@ -9,6 +9,7 @@ export const GetCities = async () => {
   }
 }
 
+
 export const GetAttractions = async (id) => {
   try {
     const res = await Client.get(`/attractions`)
@@ -17,3 +18,4 @@ export const GetAttractions = async (id) => {
     throw error
   }
 }
+

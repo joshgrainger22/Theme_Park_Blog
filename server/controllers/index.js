@@ -1,4 +1,5 @@
 // const Data = require('../models/data')
+
 const { Cities, Attractions, Comment, Post } = require ('../models');
 
 
@@ -61,3 +62,7 @@ const getAllPost = async (req, res) => {
             getAllPost
         }
 
+module.exports = {
+  getAllAttractions,
+  getAllCities
+}
