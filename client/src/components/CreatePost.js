@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createComments } from '../services/CitiesAttracService'
-import { CreateCommentsAction } from '../store/actions/CitiesAttracAction'
+import {
+  CreateCommentsAction,
+  LoadPosts
+} from '../store/actions/CitiesAttracAction'
 import { useNavigate } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-function CreatePost() {
+const mapStateToProps = ({ postState }) => {
+  return { postState }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchPosts: () => dispatch(LoadPosts())
+  }
+}
+
+function CreatePost(props) {
+  useEffect(() => {
+    props.fetchPosts()
+  }, [])
+
   const navigate = useNavigate()
   const [name, setName] = useState('')
   const [posts, setPosts] = useState('')
@@ -13,8 +31,9 @@ function CreatePost() {
 
   const dispatch = useDispatch()
 
-  function CreateComments(e) {
+  function CreatePost(e) {
     e.preventDefault()
+    window.location.reload(true)
   }
 
   return (
@@ -22,7 +41,7 @@ function CreatePost() {
       <h1>CreatePost</h1>
       <div>
         {create ? (
-          <form nSubmit={(e) => CreateComments(e)}>
+          <form onSubmit={(e) => CreatePost(e)}>
             <label>Name</label>
             <div>
               <input
@@ -58,4 +77,4 @@ function CreatePost() {
   )
 }
 
-export default CreatePost
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePost)

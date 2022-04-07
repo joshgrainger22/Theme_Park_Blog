@@ -1,9 +1,8 @@
 import './style/App.css'
 import Cities from './components/Cities'
-import Attractions from './components/Attractions'
 import { Routes, Route } from 'react-router-dom'
 import CreatePost from './components/CreatePost'
-
+import Comment from './components/Comment'
 
 function App() {
   return (
@@ -12,12 +11,11 @@ function App() {
       <main>
         <div>
           <CreatePost />
+          <Comment />
           <Routes>
             <Route path="/" element={<Cities />} />
-            <Route path="/cities/:id" element={<Attractions />} />
           </Routes>
         </div>
-        <Attractions />
       </main>
     </div>
   )
